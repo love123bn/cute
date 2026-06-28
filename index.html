@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>✨ Bói Tarot ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="bg-hearts" id="bgHearts"></div>
+
+<div class="container">
+    <!-- ===== PAGE 1: TAROT ===== -->
+    <div class="card-scene active" id="page-tarot">
+        <h1>✦ Bói Tarot ✦</h1>
+        <p class="sub">Hãy chọn một lá bài để khám phá vận mệnh tình yêu của bạn 💕</p>
+        <div class="cards" id="tarotCards">
+            <div class="card" data-index="0" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🌸</div>
+                    <div class="card-front">
+                        <span class="emoji">🌹</span>
+                        <span class="label">The Lovers</span>
+                        <span class="meaning">Tình yêu đích thực</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="1" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🌙</div>
+                    <div class="card-front">
+                        <span class="emoji">⭐</span>
+                        <span class="label">The Star</span>
+                        <span class="meaning">Hy vọng & may mắn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="2" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">💫</div>
+                    <div class="card-front">
+                        <span class="emoji">🔥</span>
+                        <span class="label">The Sun</span>
+                        <span class="meaning">Hạnh phúc viên mãn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="3" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🌙</div>
+                    <div class="card-front">
+                        <span class="emoji">🌙</span>
+                        <span class="label">The Moon</span>
+                        <span class="meaning">Bí ẩn & cảm xúc</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="4" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">👑</div>
+                    <div class="card-front">
+                        <span class="emoji">👑</span>
+                        <span class="label">The Empress</span>
+                        <span class="meaning">Sự ngọt ngào</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="5" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">✨</div>
+                    <div class="card-front">
+                        <span class="emoji">🪄</span>
+                        <span class="label">The Magician</span>
+                        <span class="meaning">Sức hút kỳ diệu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="6" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🏆</div>
+                    <div class="card-front">
+                        <span class="emoji">🏆</span>
+                        <span class="label">The Chariot</span>
+                        <span class="meaning">Chiến thắng</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="7" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🌍</div>
+                    <div class="card-front">
+                        <span class="emoji">🌍</span>
+                        <span class="label">The World</span>
+                        <span class="meaning">Hạnh phúc trọn vẹn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="8" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🔮</div>
+                    <div class="card-front">
+                        <span class="emoji">🔮</span>
+                        <span class="label">High Priestess</span>
+                        <span class="meaning">Trực giác mách bảo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-index="9" onclick="pickCard(this)">
+                <div class="card-inner">
+                    <div class="card-back">🃏</div>
+                    <div class="card-front">
+                        <span class="emoji">🌈</span>
+                        <span class="label">The Fool</span>
+                        <span class="meaning">Khởi đầu mới</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tarot-result">
+            <span class="emoji-big" id="resultEmoji">🌹</span>
+            <div class="reading" id="resultText"></div>
+        </div>
+
+        <button class="btn hidden" id="btnContinue" onclick="goToInvite()">
+            💌 Tiếp theo →
+        </button>
+    </div>
+
+    <!-- ===== PAGE 2: INVITE ===== -->
+    <div class="card-scene" id="page-invite">
+        <span class="big-emoji">🥺</span>
+        <h2>Lời mời đặc biệt</h2>
+        <p>Tối nay đi uống nước với anh hongg!🥤</p>
+        <div class="btn-group">
+            <button class="btn btn-yes" onclick="sayYes()">Có chứ! 💖</button>
+            <button class="btn btn-outline btn-no" id="btnNo"
+                onmouseenter="runAway()" onclick="runAway()">Không 😅</button>
+        </div>
+    </div>
+
+    <!-- ===== PAGE 3: SUCCESS ===== -->
+    <div class="card-scene" id="page-success">
+        <span class="big-emoji">🎉</span>
+        <h2>Yayyyyy! 💖</h2>
+        <p>
+            Anh biết mà hihi!!!<br>
+            <span class="sparkles">✨✨✨</span><br><br>
+        </p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
